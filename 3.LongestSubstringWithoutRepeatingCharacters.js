@@ -8,7 +8,7 @@ var lengthOfLongestSubstring = function(s) {
     let maxLength = 0;
   
     while(right < s.length){
-      //Checking if my right position has the character
+      //Checking if my collection has the element on [right] index
       if(!characterSet.has(s[right])){
         //add the character to the collection
         characterSet.add(s[right])
