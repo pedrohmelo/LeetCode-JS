@@ -17,8 +17,7 @@ var lengthOfLongestSubstring = function(s) {
         //move Right pointer to the next position
         right++;
       } else{
-        // If the character is in the set, move the left pointer
-        // Remove the character at the left pointer from the set
+        // If the character is in the set, remove the character at the left pointer from the set
         characterSet.delete(s[left]);
         // Move the left pointer to the next character
         left++;
