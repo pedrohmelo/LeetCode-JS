@@ -17,9 +17,7 @@ var maxArea = function(height) {
     let currentArea = difLenght * difHeight
     
     maxArea = Math.max(maxArea, currentArea);
-    console.log(maxArea)
     left++;
-    right--;
   }
   
   return maxArea;
