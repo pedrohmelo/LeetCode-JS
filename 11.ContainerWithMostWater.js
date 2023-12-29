@@ -1,27 +1,41 @@
-let height = [1,8,6,2,5,4,8,3,7]
-//Output: 49
+let height = [2,3,4,5,18,17,6] //expected output = 17
 
 //This exercise can also be applied the sliding window technique for optimal solution
 var maxArea = function(height) {
-  let left = 0;
-  let right = height.length - 1;
+
+  let leftIndex = 0;
+  let rightIndex = height.length - 1;
+  
   let maxArea = [];
 
-  while(left <= right){
-    //get difference between elements
-    let difLenght = right - left
-
-    //get difference between values do array to get the actual height
-    let difHeight = Math.min(height[left], height[right])
-
-    let currentArea = difLenght * difHeight
+    while(leftIndex < rightIndex ){
+      //get difference between elements
+      let difLenght = rightIndex - leftIndex
     
-    maxArea = Math.max(maxArea, currentArea);
-    left++;
-  }
+      //get difference between values do array to get the actual height
+      let difHeight = Math.min(height[leftIndex], height[rightIndex])
   
-  return maxArea;
+      let currentArea = difLenght * difHeight
+  
+      console.log(`leftElem = `+height[leftIndex])
+      console.log(`rightElem = `+height[rightIndex])
+      console.log(`difLenght`+` = `+difLenght)
+      console.log(`difHeight`+` = `+difHeight)
+      console.log(`area = `+currentArea)
+      console.log('===========================')
+  
+      maxArea = Math.max(maxArea, currentArea);
 
+      //Moving pointers conditionally (didn't understood this very much but it works lol)
+      if(height[leftIndex] < height[rightIndex]){
+        leftIndex++;
+      } else{
+        rightIndex--;
+      }
+      
+    }
+      
+  return maxArea;
 };
 
 console.log(maxArea(height))
