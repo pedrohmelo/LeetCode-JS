@@ -19,8 +19,8 @@ var intToRoman = function(num) {
   
     for (let i = 0; i < romanNumerals.length; i++) {
         while (num >= romanNumerals[i].value) {
-            result += romanNumerals[i].numeral;
-            num -= romanNumerals[i].value;
+            result += romanNumerals[i].numeral; //X          //XX        //XXIV
+            num -= romanNumerals[i].value;      //24-10=14   //14-10=4   //4-4=0    return XXIV
         }
     }
 
